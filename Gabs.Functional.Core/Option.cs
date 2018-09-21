@@ -10,7 +10,7 @@ namespace Gabs.Functional.Core
         public Option(T value)
         {
             this.value = value;
-            this.HasValue = value != null;
+            this.HasValue = !value.Equals(default(T));
         }
 
         public static Option<T> Of(T value) => new Option<T>(value);
